@@ -98,6 +98,7 @@
     <Compile Include="WebApi\DependencyContainerResolver.cs" />
     <Compile Include="WebApi\HttpRequestContextStore.cs" />
     <Compile Include="WebApi\IExceptionLogger.cs" />
+    <Compile Include="WebApi\WebApiExceptionHandler.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

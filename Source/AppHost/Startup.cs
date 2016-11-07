@@ -10,7 +10,6 @@ namespace AppHost
     using System.Reflection;
     using System.Web.Compilation;
     using System.Web.Http;
-    using System.Web.Http.ExceptionHandling;
 
     using Ergate.Infrastructure.AppBoot;
     using Ergate.Infrastructure.AppBoot.Container;
@@ -44,13 +43,13 @@ namespace AppHost
 
         private IEnumerable<Assembly> GetApplicationAssemblies()
         {
+            //todo cleanup
             var assemblies =
                 BuildManager.GetReferencedAssemblies()
                     .Cast<Assembly>()
                     .Where(
                         a =>
                         a.GetName().Name.StartsWith("AppHost")
-                        || a.GetName().Name.StartsWith("Infrastructure.WebApi")
                         || a.GetName().Name.StartsWith("iQuarc.DataAccess")
                         || a.GetName().Name.StartsWith("DataModel") 
                         || a.GetName().Name.StartsWith("Contracts")

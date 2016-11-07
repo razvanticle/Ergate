@@ -1,12 +1,8 @@
-﻿namespace Infrastructure.WebApi.ExceptionHandling
+﻿namespace Ergate.Infrastructure.WebApi
 {
-    using System.Net.Http;
     using System.Web.Http.ExceptionHandling;
     using System.Web.Http.Results;
 
-    using Ergate.Infrastructure.AppBoot.Container;
-    
-    [Service(typeof(IExceptionHandler))]
     public class WebApiExceptionHandler : ExceptionHandler
     {
         public override void Handle(ExceptionHandlerContext context)

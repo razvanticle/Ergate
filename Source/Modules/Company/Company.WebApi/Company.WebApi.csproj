@@ -69,10 +69,6 @@
       <Project>{53fbdbe7-3b53-4fc1-9676-1932c6ce6a2f}</Project>
       <Name>iQuarc.DataAccess</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Infrastructure\Infrastructure.WebApi\Infrastructure.WebApi.csproj">
-      <Project>{b0b151ea-7636-44df-81d5-15e2c2653b6c}</Project>
-      <Name>Infrastructure.WebApi</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Contracts\Contracts.csproj">
       <Project>{848496a7-2151-4a7f-983b-759cc07e4b8f}</Project>
       <Name>Contracts</Name>

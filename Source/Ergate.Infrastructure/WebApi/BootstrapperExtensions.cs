@@ -5,22 +5,19 @@ namespace Ergate.Infrastructure.WebApi
 
     using Ergate.Infrastructure.AppBoot;
 
-    using Microsoft.Practices.ServiceLocation;
-
     public static class BootstrapperExtensions
-	{
-		public static Bootstrapper ConfigureWebApi(this Bootstrapper bootstrapper, HttpConfiguration config)
-		{
-		    bootstrapper.ConfigureWith(new HttpRequestContextStore());
+    {
+        public static Bootstrapper ConfigureWebApi(this Bootstrapper bootstrapper, HttpConfiguration config)
+        {
+            bootstrapper.ConfigureWith(new HttpRequestContextStore());
 
-			IServiceLocator serviceLocator = bootstrapper.ServiceLocator;
-			config.DependencyResolver = new DependencyContainerResolver(serviceLocator);
+            var serviceLocator = bootstrapper.ServiceLocator;
+            config.DependencyResolver = new DependencyContainerResolver(serviceLocator);
 
-            //todo move this to a nicer place
-		    IExceptionHandler exceptionHandler = serviceLocator.GetInstance<IExceptionHandler>();
-            config.Services.Replace(typeof(IExceptionHandler), exceptionHandler);
+            // todo move this to a nicer place
+            config.Services.Replace(typeof(IExceptionHandler), new WebApiExceptionHandler());
 
             return bootstrapper;
-		}
-	}
+        }
+    }
 }
