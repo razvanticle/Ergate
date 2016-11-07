@@ -10,12 +10,13 @@ namespace AppHost
     using System.Reflection;
     using System.Web.Compilation;
     using System.Web.Http;
+    using System.Web.Http.ExceptionHandling;
 
     using iQuarc.AppBoot;
     using iQuarc.AppBoot.Unity;
     using iQuarc.AppBoot.WebApi;
     using iQuarc.DataAccess.AppBoot;
-
+    
     using Owin;
 
     public class Startup
@@ -26,8 +27,7 @@ namespace AppHost
 
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
             config.MapHttpAttributeRoutes();
-            app.UseWebApi(config);
-
+            
             var assemblies = this.GetApplicationAssemblies().ToArray();
             Bootstrapper bootstrapper = new Bootstrapper(assemblies);
             bootstrapper.ConfigureWithUnity();
@@ -36,6 +36,8 @@ namespace AppHost
             bootstrapper.Run();
 
             bootstrapper.ConfigureWebApi(config);
+
+            app.UseWebApi(config);
         }
 
         private IEnumerable<Assembly> GetApplicationAssemblies()
@@ -45,7 +47,8 @@ namespace AppHost
                     .Cast<Assembly>()
                     .Where(
                         a =>
-                        a.GetName().Name.StartsWith("AppHost") 
+                        a.GetName().Name.StartsWith("AppHost")
+                        || a.GetName().Name.StartsWith("Infrastructure.WebApi")
                         || a.GetName().Name.StartsWith("iQuarc.DataAccess")
                         || a.GetName().Name.StartsWith("DataAccess") 
                         || a.GetName().Name.StartsWith("Contracts")

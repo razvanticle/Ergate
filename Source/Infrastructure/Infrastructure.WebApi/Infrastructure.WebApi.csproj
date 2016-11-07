@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6CCCA2B8-4C3E-459E-B341-8A0EE788C147}</ProjectGuid>
+    <ProjectGuid>{B0B151EA-7636-44DF-81D5-15E2C2653B6C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Company.WebApi</RootNamespace>
-    <AssemblyName>Company.WebApi</AssemblyName>
+    <RootNamespace>Infrastructure.WebApi</RootNamespace>
+    <AssemblyName>Infrastructure.WebApi</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\AppHost\bin\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -32,17 +32,21 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml.Linq" />
@@ -53,36 +57,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Company\CompanyController.cs" />
-    <Compile Include="Company\CompanyDto.cs" />
+    <Compile Include="ExceptionHandling\WebApiExceptionHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Infrastructure\AppBoot\iQuarc.AppBoot\iQuarc.AppBoot.csproj">
+    <ProjectReference Include="..\AppBoot\iQuarc.AppBoot\iQuarc.AppBoot.csproj">
       <Project>{f1412a2b-3e4d-43bc-8a0a-8fc72703aa2c}</Project>
       <Name>iQuarc.AppBoot</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Infrastructure\DataAccess\iQuarc.DataAccess\iQuarc.DataAccess.csproj">
-      <Project>{53fbdbe7-3b53-4fc1-9676-1932c6ce6a2f}</Project>
-      <Name>iQuarc.DataAccess</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Infrastructure\Infrastructure.WebApi\Infrastructure.WebApi.csproj">
-      <Project>{b0b151ea-7636-44df-81d5-15e2c2653b6c}</Project>
-      <Name>Infrastructure.WebApi</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Contracts\Contracts.csproj">
-      <Project>{848496a7-2151-4a7f-983b-759cc07e4b8f}</Project>
-      <Name>Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\DataAccess\DataAccess.csproj">
-      <Project>{af1a1ddd-0eef-4936-a521-f25b039cf52c}</Project>
-      <Name>DataAccess</Name>
-    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

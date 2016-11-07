@@ -3,7 +3,9 @@ using Microsoft.Practices.ServiceLocation;
 
 namespace iQuarc.AppBoot.WebApi
 {
-	public static class BootstrapperExtensions
+    using System.Web.Http.ExceptionHandling;
+
+    public static class BootstrapperExtensions
 	{
 		public static Bootstrapper ConfigureWebApi(this Bootstrapper bootstrapper, HttpConfiguration config)
 		{
@@ -12,7 +14,11 @@ namespace iQuarc.AppBoot.WebApi
 			IServiceLocator serviceLocator = bootstrapper.ServiceLocator;
 			config.DependencyResolver = new DependencyContainerResolver(serviceLocator);
 
-			return bootstrapper;
+            //todo move this to a nicer place
+		    IExceptionHandler exceptionHandler = serviceLocator.GetInstance<IExceptionHandler>();
+            config.Services.Replace(typeof(IExceptionHandler), exceptionHandler);
+
+            return bootstrapper;
 		}
 	}
 }
