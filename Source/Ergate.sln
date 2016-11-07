@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ergate.Common", "Ergate.Com
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ergate.Infrastructure.UnitTests", "Ergate.Infrastructure.UnitTests\Ergate.Infrastructure.UnitTests.csproj", "{0F81D696-F22B-4ABB-AEE0-428CBB6E5A75}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ergate.Common.UnitTests", "Ergate.Common.UnitTests\Ergate.Common.UnitTests.csproj", "{72161F10-4FA4-4484-960B-32FAF0D619B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +99,10 @@ Global
 		{0F81D696-F22B-4ABB-AEE0-428CBB6E5A75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F81D696-F22B-4ABB-AEE0-428CBB6E5A75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F81D696-F22B-4ABB-AEE0-428CBB6E5A75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72161F10-4FA4-4484-960B-32FAF0D619B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72161F10-4FA4-4484-960B-32FAF0D619B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72161F10-4FA4-4484-960B-32FAF0D619B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72161F10-4FA4-4484-960B-32FAF0D619B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
