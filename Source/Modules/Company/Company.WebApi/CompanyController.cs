@@ -6,8 +6,8 @@
 
     using DataModel;
 
+    using Ergate.DataAccess;
     using Ergate.Infrastructure.AppBoot.Container;
-    using iQuarc.DataAccess;
 
     public class CompanyController : ApiController
     {

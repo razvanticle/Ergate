@@ -1,6 +1,7 @@
 ﻿namespace DataModel
 {
-    using iQuarc.DataAccess;
+    using Ergate.DataAccess;
+    
     using Ergate.Infrastructure.AppBoot.Container;
 
     [Service(typeof(IDbContextFactory))]

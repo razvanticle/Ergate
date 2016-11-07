@@ -11,13 +11,12 @@ namespace AppHost
     using System.Web.Compilation;
     using System.Web.Http;
 
+    using Ergate.DataAccess.AppBoot;
     using Ergate.Infrastructure.AppBoot;
     using Ergate.Infrastructure.AppBoot.Container;
     using Ergate.Infrastructure.Unity;
     using Ergate.Infrastructure.WebApi;
 
-    using iQuarc.DataAccess.AppBoot;
-    
     using Owin;
 
     public class Startup
@@ -50,7 +49,7 @@ namespace AppHost
                     .Where(
                         a =>
                         a.GetName().Name.StartsWith("AppHost")
-                        || a.GetName().Name.StartsWith("iQuarc.DataAccess")
+                        || a.GetName().Name.StartsWith("Ergate.DataAccess")
                         || a.GetName().Name.StartsWith("DataModel") 
                         || a.GetName().Name.StartsWith("Contracts")
                         || a.GetName().Name.StartsWith("LandingPage.") 

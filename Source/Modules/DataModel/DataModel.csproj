@@ -83,13 +83,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Ergate.DataAccess\Ergate.DataAccess.csproj">
+      <Project>{ec308af0-c18a-4292-b784-5addb2da5c6c}</Project>
+      <Name>Ergate.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Ergate.Infrastructure\Ergate.Infrastructure.csproj">
       <Project>{05606ca0-d1ee-4e3f-ac42-433216364159}</Project>
       <Name>Ergate.Infrastructure</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Infrastructure\DataAccess\iQuarc.DataAccess\iQuarc.DataAccess.csproj">
-      <Project>{53fbdbe7-3b53-4fc1-9676-1932c6ce6a2f}</Project>
-      <Name>iQuarc.DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\Contracts\Contracts.csproj">
       <Project>{848496a7-2151-4a7f-983b-759cc07e4b8f}</Project>

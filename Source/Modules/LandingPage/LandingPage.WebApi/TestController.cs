@@ -5,8 +5,8 @@
 
     using DataModel;
 
-    using iQuarc.DataAccess;
-
+    using Ergate.DataAccess;
+    
     public class TestController : ApiController
     {
         private readonly IRepository repository;

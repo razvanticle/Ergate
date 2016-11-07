@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{F1ADE27A-16FE-402C-B58D-520AA01F5A6F}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{2AFDAB54-1CDD-42B3-979D-E0CEC2413C75}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppHost", "AppHost\AppHost.csproj", "{1B427C32-97F1-43CF-B7D6-1D1F3EE6952C}"
@@ -19,16 +17,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Company", "Company", "{74A3
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Company.WebApi", "Modules\Company\Company.WebApi\Company.WebApi.csproj", "{6CCCA2B8-4C3E-459E-B341-8A0EE788C147}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", "{D3A77866-70F8-4711-A0F5-29A2C266320B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iQuarc.DataAccess", "Infrastructure\DataAccess\iQuarc.DataAccess\iQuarc.DataAccess.csproj", "{53FBDBE7-3B53-4FC1-9676-1932C6CE6A2F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iQuarc.DataAccess.AppBoot", "Infrastructure\DataAccess\iQuarc.DataAccess.AppBoot\iQuarc.DataAccess.AppBoot.csproj", "{5C839D26-2F63-4E00-A907-DD535A9846DF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iQuarc.DataAccess.IntegrationTests", "Infrastructure\DataAccess\iQuarc.DataAccess.IntegrationTests\iQuarc.DataAccess.IntegrationTests.csproj", "{74216D64-CDD7-4A47-81CB-A9B7407D721F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iQuarc.DataAccess.UnitTests", "Infrastructure\DataAccess\iQuarc.DataAccess.UnitTests\iQuarc.DataAccess.UnitTests.csproj", "{DFE330D3-8DFD-45CB-BDAD-5E1BA3D60569}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModel", "Modules\DataModel\DataModel.csproj", "{AF1A1DDD-0EEF-4936-A521-F25B039CF52C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ergate.Infrastructure", "Ergate.Infrastructure\Ergate.Infrastructure.csproj", "{05606CA0-D1EE-4E3F-AC42-433216364159}"
@@ -38,6 +26,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ergate.Infrastructure.UnitTests", "Ergate.Infrastructure.UnitTests\Ergate.Infrastructure.UnitTests.csproj", "{0F81D696-F22B-4ABB-AEE0-428CBB6E5A75}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ergate.Common.UnitTests", "Ergate.Common.UnitTests\Ergate.Common.UnitTests.csproj", "{72161F10-4FA4-4484-960B-32FAF0D619B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ergate.DataAccess", "Ergate.DataAccess\Ergate.DataAccess.csproj", "{EC308AF0-C18A-4292-B784-5ADDB2DA5C6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ergate.DataAccess.UnitTests", "Ergate.DataAccess.UnitTests\Ergate.DataAccess.UnitTests.csproj", "{9C169698-AA06-4F59-9AD3-B5CDC04BCA1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,22 +53,6 @@ Global
 		{6CCCA2B8-4C3E-459E-B341-8A0EE788C147}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CCCA2B8-4C3E-459E-B341-8A0EE788C147}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CCCA2B8-4C3E-459E-B341-8A0EE788C147}.Release|Any CPU.Build.0 = Release|Any CPU
-		{53FBDBE7-3B53-4FC1-9676-1932C6CE6A2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{53FBDBE7-3B53-4FC1-9676-1932C6CE6A2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{53FBDBE7-3B53-4FC1-9676-1932C6CE6A2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{53FBDBE7-3B53-4FC1-9676-1932C6CE6A2F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5C839D26-2F63-4E00-A907-DD535A9846DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5C839D26-2F63-4E00-A907-DD535A9846DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5C839D26-2F63-4E00-A907-DD535A9846DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5C839D26-2F63-4E00-A907-DD535A9846DF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{74216D64-CDD7-4A47-81CB-A9B7407D721F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{74216D64-CDD7-4A47-81CB-A9B7407D721F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{74216D64-CDD7-4A47-81CB-A9B7407D721F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{74216D64-CDD7-4A47-81CB-A9B7407D721F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DFE330D3-8DFD-45CB-BDAD-5E1BA3D60569}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DFE330D3-8DFD-45CB-BDAD-5E1BA3D60569}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DFE330D3-8DFD-45CB-BDAD-5E1BA3D60569}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DFE330D3-8DFD-45CB-BDAD-5E1BA3D60569}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AF1A1DDD-0EEF-4936-A521-F25B039CF52C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AF1A1DDD-0EEF-4936-A521-F25B039CF52C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF1A1DDD-0EEF-4936-A521-F25B039CF52C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -97,6 +73,14 @@ Global
 		{72161F10-4FA4-4484-960B-32FAF0D619B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72161F10-4FA4-4484-960B-32FAF0D619B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72161F10-4FA4-4484-960B-32FAF0D619B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC308AF0-C18A-4292-B784-5ADDB2DA5C6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC308AF0-C18A-4292-B784-5ADDB2DA5C6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC308AF0-C18A-4292-B784-5ADDB2DA5C6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC308AF0-C18A-4292-B784-5ADDB2DA5C6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C169698-AA06-4F59-9AD3-B5CDC04BCA1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C169698-AA06-4F59-9AD3-B5CDC04BCA1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C169698-AA06-4F59-9AD3-B5CDC04BCA1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C169698-AA06-4F59-9AD3-B5CDC04BCA1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -107,11 +91,6 @@ Global
 		{848496A7-2151-4A7F-983B-759CC07E4B8F} = {2AFDAB54-1CDD-42B3-979D-E0CEC2413C75}
 		{74A3C6F2-7B77-4A4A-90FB-F6450C3E9224} = {2AFDAB54-1CDD-42B3-979D-E0CEC2413C75}
 		{6CCCA2B8-4C3E-459E-B341-8A0EE788C147} = {74A3C6F2-7B77-4A4A-90FB-F6450C3E9224}
-		{D3A77866-70F8-4711-A0F5-29A2C266320B} = {F1ADE27A-16FE-402C-B58D-520AA01F5A6F}
-		{53FBDBE7-3B53-4FC1-9676-1932C6CE6A2F} = {D3A77866-70F8-4711-A0F5-29A2C266320B}
-		{5C839D26-2F63-4E00-A907-DD535A9846DF} = {D3A77866-70F8-4711-A0F5-29A2C266320B}
-		{74216D64-CDD7-4A47-81CB-A9B7407D721F} = {D3A77866-70F8-4711-A0F5-29A2C266320B}
-		{DFE330D3-8DFD-45CB-BDAD-5E1BA3D60569} = {D3A77866-70F8-4711-A0F5-29A2C266320B}
 		{AF1A1DDD-0EEF-4936-A521-F25B039CF52C} = {2AFDAB54-1CDD-42B3-979D-E0CEC2413C75}
 	EndGlobalSection
 EndGlobal
