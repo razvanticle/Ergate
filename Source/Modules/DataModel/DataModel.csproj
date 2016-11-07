@@ -83,9 +83,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Infrastructure\AppBoot\iQuarc.AppBoot\iQuarc.AppBoot.csproj">
-      <Project>{F1412A2B-3E4D-43BC-8A0A-8FC72703AA2C}</Project>
-      <Name>iQuarc.AppBoot</Name>
+    <ProjectReference Include="..\..\Ergate.Infrastructure\Ergate.Infrastructure.csproj">
+      <Project>{05606ca0-d1ee-4e3f-ac42-433216364159}</Project>
+      <Name>Ergate.Infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Infrastructure\DataAccess\iQuarc.DataAccess\iQuarc.DataAccess.csproj">
       <Project>{53fbdbe7-3b53-4fc1-9676-1932c6ce6a2f}</Project>

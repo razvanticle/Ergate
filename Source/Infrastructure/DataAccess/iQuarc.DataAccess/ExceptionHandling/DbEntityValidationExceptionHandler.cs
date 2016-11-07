@@ -1,11 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Data.Entity.Validation;
-using iQuarc.SystemEx;
-
 namespace iQuarc.DataAccess
 {
-    class DbEntityValidationExceptionHandler : IExceptionHandler
+    using System;
+    using System.Collections.Generic;
+    using System.Data.Entity.Validation;
+
+    using Ergate.Common.Extensions;
+
+    internal class DbEntityValidationExceptionHandler : IExceptionHandler
     {
         private readonly IExceptionHandler successor;
 
@@ -14,26 +15,18 @@ namespace iQuarc.DataAccess
             this.successor = successor;
         }
 
+        public IExceptionHandler Successor { get; private set; }
+
         public void Handle(Exception exception)
         {
             var validationException = exception.FirstInner<DbEntityValidationException>();
             if (validationException != null)
             {
-                IEnumerable<DataValidationResult> errors = GetErrors(validationException);
+                var errors = this.GetErrors(validationException);
                 throw new DataValidationException(validationException.Message, errors, validationException);
             }
 
-            successor.Handle(exception);
-        }
-
-        private IEnumerable<DataValidationResult> GetErrors(DbEntityValidationException validationException)
-        {
-            foreach (var dbEntityValidationResult in validationException.EntityValidationErrors)
-            {
-                EntityEntry entry = new EntityEntry(dbEntityValidationResult.Entry);
-                IEnumerable<ValidationError> entryErrors = GetEntryErrors(dbEntityValidationResult.ValidationErrors);
-                yield return new DataValidationResult(entry, entryErrors);
-            }
+            this.successor.Handle(exception);
         }
 
         private IEnumerable<ValidationError> GetEntryErrors(IEnumerable<DbValidationError> validationErrors)
@@ -44,6 +37,14 @@ namespace iQuarc.DataAccess
             }
         }
 
-        public IExceptionHandler Successor { get; private set; }
+        private IEnumerable<DataValidationResult> GetErrors(DbEntityValidationException validationException)
+        {
+            foreach (var dbEntityValidationResult in validationException.EntityValidationErrors)
+            {
+                var entry = new EntityEntry(dbEntityValidationResult.Entry);
+                var entryErrors = this.GetEntryErrors(dbEntityValidationResult.ValidationErrors);
+                yield return new DataValidationResult(entry, entryErrors);
+            }
+        }
     }
 }

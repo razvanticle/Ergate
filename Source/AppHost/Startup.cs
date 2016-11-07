@@ -12,9 +12,11 @@ namespace AppHost
     using System.Web.Http;
     using System.Web.Http.ExceptionHandling;
 
-    using iQuarc.AppBoot;
-    using iQuarc.AppBoot.Unity;
-    using iQuarc.AppBoot.WebApi;
+    using Ergate.Infrastructure.AppBoot;
+    using Ergate.Infrastructure.AppBoot.Container;
+    using Ergate.Infrastructure.Unity;
+    using Ergate.Infrastructure.WebApi;
+
     using iQuarc.DataAccess.AppBoot;
     
     using Owin;

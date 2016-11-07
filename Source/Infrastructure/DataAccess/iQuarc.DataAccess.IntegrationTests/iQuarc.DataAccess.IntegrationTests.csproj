@@ -84,13 +84,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\AppBoot\iQuarc.AppBoot.Unity\iQuarc.AppBoot.Unity.csproj">
-      <Project>{ff6a38be-edf7-45a6-a653-759253c698bd}</Project>
-      <Name>iQuarc.AppBoot.Unity</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\AppBoot\iQuarc.AppBoot\iQuarc.AppBoot.csproj">
-      <Project>{f1412a2b-3e4d-43bc-8a0a-8fc72703aa2c}</Project>
-      <Name>iQuarc.AppBoot</Name>
+    <ProjectReference Include="..\..\..\Ergate.Infrastructure\Ergate.Infrastructure.csproj">
+      <Project>{05606ca0-d1ee-4e3f-ac42-433216364159}</Project>
+      <Name>Ergate.Infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\iQuarc.DataAccess.AppBoot\iQuarc.DataAccess.AppBoot.csproj">
       <Project>{5C839D26-2F63-4E00-A907-DD535A9846DF}</Project>

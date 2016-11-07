@@ -1,8 +1,9 @@
-﻿using iQuarc.AppBoot;
-
+﻿
 namespace iQuarc.DataAccess.AppBoot
 {
-	public static class DataAccessConfigurations
+    using Ergate.Infrastructure.AppBoot.Container;
+
+    public static class DataAccessConfigurations
 	{
 		public static ConventionRegistrationBehavior DefaultRegistrationConventions
 		{

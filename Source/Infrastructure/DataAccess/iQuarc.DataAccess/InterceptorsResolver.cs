@@ -1,30 +1,33 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using iQuarc.SystemEx.Priority;
-using Microsoft.Practices.ServiceLocation;
-
 namespace iQuarc.DataAccess
 {
-	public class InterceptorsResolver : IInterceptorsResolver
-	{
-		private readonly IServiceLocator servicelocator;
-		private static readonly Type interceptorGenericType = typeof(IEntityInterceptor<>);
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
 
-		public InterceptorsResolver(IServiceLocator servicelocator)
-		{
-			this.servicelocator = servicelocator;
-		}
+    using Ergate.Common.Extensions.Priority;
 
-		public IEnumerable<IEntityInterceptor> GetGlobalInterceptors()
-		{
-			return servicelocator.GetAllInstances<IEntityInterceptor>().OrderByPriority();
-		}
+    using Microsoft.Practices.ServiceLocation;
 
-		public IEnumerable<IEntityInterceptor> GetEntityInterceptors(Type entityType)
-		{
-			Type interceptorType = interceptorGenericType.MakeGenericType(entityType);
-			return servicelocator.GetAllInstances(interceptorType).Cast<IEntityInterceptor>();
-		}
-	}
+    public class InterceptorsResolver : IInterceptorsResolver
+    {
+        private static readonly Type interceptorGenericType = typeof(IEntityInterceptor<>);
+
+        private readonly IServiceLocator servicelocator;
+
+        public InterceptorsResolver(IServiceLocator servicelocator)
+        {
+            this.servicelocator = servicelocator;
+        }
+
+        public IEnumerable<IEntityInterceptor> GetEntityInterceptors(Type entityType)
+        {
+            var interceptorType = interceptorGenericType.MakeGenericType(entityType);
+            return this.servicelocator.GetAllInstances(interceptorType).Cast<IEntityInterceptor>();
+        }
+
+        public IEnumerable<IEntityInterceptor> GetGlobalInterceptors()
+        {
+            return this.servicelocator.GetAllInstances<IEntityInterceptor>().OrderByPriority();
+        }
+    }
 }

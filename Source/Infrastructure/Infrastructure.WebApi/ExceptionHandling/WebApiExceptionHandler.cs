@@ -4,8 +4,8 @@
     using System.Web.Http.ExceptionHandling;
     using System.Web.Http.Results;
 
-    using iQuarc.AppBoot;
-
+    using Ergate.Infrastructure.AppBoot.Container;
+    
     [Service(typeof(IExceptionHandler))]
     public class WebApiExceptionHandler : ExceptionHandler
     {

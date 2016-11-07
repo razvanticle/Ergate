@@ -4,18 +4,20 @@ using System.Data.Entity;
 using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
-using iQuarc.AppBoot;
-using iQuarc.AppBoot.Unity;
 using iQuarc.DataAccess.AppBoot;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace iQuarc.DataAccess.IntegrationTests
 {
+    using Ergate.Infrastructure.AppBoot;
+    using Ergate.Infrastructure.AppBoot.Container;
+    using Ergate.Infrastructure.Unity;
+
     [TestClass]
     public class DataAccessIntegrationTests
     {
         private Bootstrapper bootstrapper;
-
+        
         [TestInitialize]
         public void Init()
         {

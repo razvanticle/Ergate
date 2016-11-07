@@ -69,13 +69,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Common\SystemEx\iQuarc.SystemEx\iQuarc.SystemEx.csproj">
-      <Project>{42d7bc38-b993-470b-a9f5-9d52f0fc7cf8}</Project>
-      <Name>iQuarc.SystemEx</Name>
+    <ProjectReference Include="..\..\..\Ergate.Common\Ergate.Common.csproj">
+      <Project>{58148571-c36b-41c3-8d4b-e805661c48c9}</Project>
+      <Name>Ergate.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\AppBoot\iQuarc.AppBoot\iQuarc.AppBoot.csproj">
-      <Project>{f1412a2b-3e4d-43bc-8a0a-8fc72703aa2c}</Project>
-      <Name>iQuarc.AppBoot</Name>
+    <ProjectReference Include="..\..\..\Ergate.Infrastructure\Ergate.Infrastructure.csproj">
+      <Project>{05606ca0-d1ee-4e3f-ac42-433216364159}</Project>
+      <Name>Ergate.Infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\iQuarc.DataAccess\iQuarc.DataAccess.csproj">
       <Project>{53fbdbe7-3b53-4fc1-9676-1932c6ce6a2f}</Project>

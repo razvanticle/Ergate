@@ -94,9 +94,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Common\SystemEx\iQuarc.SystemEx\iQuarc.SystemEx.csproj">
-      <Project>{42d7bc38-b993-470b-a9f5-9d52f0fc7cf8}</Project>
-      <Name>iQuarc.SystemEx</Name>
+    <ProjectReference Include="..\..\..\Ergate.Common\Ergate.Common.csproj">
+      <Project>{58148571-c36b-41c3-8d4b-e805661c48c9}</Project>
+      <Name>Ergate.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
