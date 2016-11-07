@@ -4,16 +4,16 @@
     using System.Linq;
     using System.Web.Http;
 
-    using DataAccess;
+    using DataModel;
 
     using iQuarc.AppBoot;
     using iQuarc.DataAccess;
 
     public class CompanyController : ApiController
     {
-        private readonly IRepository repository;
-
         private readonly IMyInterface myInterface;
+
+        private readonly IRepository repository;
 
         public CompanyController(IRepository repository, IMyInterface myInterface)
         {

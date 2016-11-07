@@ -50,7 +50,7 @@ namespace AppHost
                         a.GetName().Name.StartsWith("AppHost")
                         || a.GetName().Name.StartsWith("Infrastructure.WebApi")
                         || a.GetName().Name.StartsWith("iQuarc.DataAccess")
-                        || a.GetName().Name.StartsWith("DataAccess") 
+                        || a.GetName().Name.StartsWith("DataModel") 
                         || a.GetName().Name.StartsWith("Contracts")
                         || a.GetName().Name.StartsWith("LandingPage.") 
                         || a.GetName().Name.StartsWith("Company."))

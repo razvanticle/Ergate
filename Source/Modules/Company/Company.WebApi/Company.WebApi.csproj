@@ -77,9 +77,9 @@
       <Project>{848496a7-2151-4a7f-983b-759cc07e4b8f}</Project>
       <Name>Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\DataAccess\DataAccess.csproj">
+    <ProjectReference Include="..\..\DataModel\DataModel.csproj">
       <Project>{af1a1ddd-0eef-4936-a521-f25b039cf52c}</Project>
-      <Name>DataAccess</Name>
+      <Name>DataModel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

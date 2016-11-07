@@ -1,4 +1,4 @@
-﻿namespace DataAccess
+﻿namespace DataModel
 {
     using iQuarc.AppBoot;
     using iQuarc.DataAccess;

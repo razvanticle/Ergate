@@ -3,7 +3,7 @@
     using System.Linq;
     using System.Web.Http;
 
-    using DataAccess;
+    using DataModel;
 
     using iQuarc.DataAccess;
 
